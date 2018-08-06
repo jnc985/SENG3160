@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts
+Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!-- STRUTS2 groups actions into packages. A package may have a URL prefix -->
+    <package name="default" extends="struts-default">
+        <!--The default actions which we execute -->
+        <default-action-ref name="/" />
+        <!-- Define interceptors here -->
+        <!-- Define actions here -->
+        <action name="/" class="actions.IndexAction">
+            <result name="success">WEB-INF/views/index.jsp</result>
+        </action>
+
+        <action name="register" class="actions.RegisterAction">
+            <result name="success">WEB-INF/views/register.jsp</result>
+        </action>
+        <action name="newUser" method="newUser" class="actions.RegisterAction">
+            <result name="success">WEB-INF/views/newuser.jsp</result>
+        </action>
+        <action name="listUsers" class="actions.UsersAction">
+            <result name="success">WEB-INF/views/listusers.jsp</result>
+        </action>
+    </package>
+</struts>
