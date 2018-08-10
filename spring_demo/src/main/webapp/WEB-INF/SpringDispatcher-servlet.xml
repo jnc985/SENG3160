@@ -50,4 +50,12 @@
         </property>
     </bean>
 
+    <!-- Hook up our Interceptor so the framework can find it -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/list"/>
+            <bean id="exampleInterceptorImplementation" class="jcton.interceptors.ExampleInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
